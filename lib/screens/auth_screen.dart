@@ -5,6 +5,8 @@ import 'package:fireship_firestore_provide_hero/screens/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../providers/firebaseauth_provider.dart';
+
 class AuthScreen extends StatefulWidget {
   static const routeName = '/auth';
   const AuthScreen({Key? key}) : super(key: key);
@@ -38,6 +40,29 @@ class _AuthScreenState extends State<AuthScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(height: MediaQuery.of(context).size.height / 2.5),
+            Container(
+              width: MediaQuery.of(context).size.width / 1.4,
+              height: 44,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10.0),
+                color: Colors.deepOrange,
+              ),
+              child: MaterialButton(
+                onPressed: () {
+                  Provider.of<FirebaseAuthProvider>(context, listen: false)
+                      .signInwithGoogle(context);
+                },
+                child: const Text(
+                  "Sign In with Google",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: MediaQuery.of(context).size.height / 50),
             Container(
               width: MediaQuery.of(context).size.width / 1.4,
               height: 44,

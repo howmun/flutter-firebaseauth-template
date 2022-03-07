@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="dev.howmun.fireship_firestore_provide_hero">
    <application
-        android:label="fireship_firestore_provide_hero"
+        android:label="Firebase Auth Template"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
